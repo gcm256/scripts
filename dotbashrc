@@ -1,0 +1,19 @@
+export PATH="/usr/local/sbin:$PATH"
+export GPG_TTY=$(tty)
+
+test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
+
+source ~/git-completion.bash
+
+# Added for bash-git-prompt
+if [ -f "/usr/local/opt/bash-git-prompt/share/gitprompt.sh" ]; then
+  unset PROMPT_COMMAND
+  __GIT_PROMPT_DIR="/usr/local/opt/bash-git-prompt/share"
+  GIT_PROMPT_ONLY_IN_REPO=1
+  source "/usr/local/opt/bash-git-prompt/share/gitprompt.sh"
+fi
+
+# Added by Meld for OSX
+alias meld=/Applications/Meld.app/Contents/MacOS/Meld
+
+eval "$(starship init bash)"
