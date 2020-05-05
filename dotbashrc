@@ -1,8 +1,6 @@
 export PATH="/usr/local/sbin:$PATH"
 export GPG_TTY=$(tty)
 
-test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
-
 source ~/git-completion.bash
 
 # Added for bash-git-prompt
@@ -16,4 +14,11 @@ fi
 # Added by Meld for OSX
 alias meld=/Applications/Meld.app/Contents/MacOS/Meld
 
-eval "$(starship init bash)"
+#eval "$(starship init bash)"
+
+export ITERM2_SQUELCH_MARK=1
+test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
+PS1=$(iterm2_prompt_mark)$PS1
+
+export JAVA_HOME=/Users/user1/Downloads/jdk-14.jdk/Contents/Home/
+export PATH=/Users/user1/Downloads/apache-maven-3.6.3/bin:$PATH
