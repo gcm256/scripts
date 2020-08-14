@@ -1,0 +1,44 @@
+[user]
+    name = gcm
+    email = 59884013+gcm256@users.noreply.github.com
+    signingkey = A166724F1D21D3DA
+[core]
+    editor = vim
+    pager = less
+    excludesfile = /Users/user1/.gitignore_global
+[diff]
+    tool = tkdiff #For "git difftool". Options include: tkdiff meld kdiff3 kompare emerge vimdiff ydiff
+    external = extDiffGit
+    #mnemonicprefix = true
+[difftool "extDiffGit"]
+    cmd = extDiffGit "1" "$LOCAL" "1" "1" "$REMOTE" "1" "1"
+[merge]
+    tool = tkdiff #For "git mergetool". Also used for "git difftool" if diff.tool config isn't defined. Options include: Same as diff.tool ie vimdiff etc.
+    #ff = false
+[mergetool "extMergeGit"]
+    cmd = extMergeGit "$BASE" "$LOCAL" "$REMOTE" "$MERGED"
+    trustExitCode = false
+[color]
+    ui = true
+[alias]
+    lol = log --oneline --decorate --all --graph
+    #lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+    showdate = show --no-patch --no-notes --pretty='%cD'
+    statuss = status -uno
+[push]
+    default = nothing
+[commit]
+    #gpgsign = true
+    #template=/net/slc03rjf.example1.com/scratch/user2/teamgittemplate
+[help]
+    autocorrect = 50
+[fetch]
+    prune = false #true
+[status]
+    #showUntrackedFiles = no
+[gpg]
+    #program = gpg2
+[hub]
+    protocol = ssh
+[credential]
+    helper = #osxkeychain

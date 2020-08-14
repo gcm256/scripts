@@ -1,0 +1,4 @@
+#!/bin/sh
+#tkdiff $*
+#/Applications/Meld.app/Contents/MacOS/Meld $* >/dev/null 2>&1
+/Applications/p4merge.app/Contents/MacOS/p4merge $*
