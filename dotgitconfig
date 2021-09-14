@@ -1,3 +1,5 @@
+# git config --list --show-origin Command will list the various sources from where the config are getting picked up
+
 [user]
     name = gcm
     email = 59884013+gcm256@users.noreply.github.com
@@ -13,10 +15,14 @@
 [difftool "extDiffGit"]
     cmd = extDiffGit "1" "$LOCAL" "1" "1" "$REMOTE" "1" "1"
 [merge]
-    tool = tkdiff #For "git mergetool". Also used for "git difftool" if diff.tool config isn't defined. Options include: Same as diff.tool ie vimdiff etc.
+    tool = p4merge #For "git mergetool". Also used for "git difftool" if diff.tool config isn't defined. Options include: Same as diff.tool ie vimdiff etc.
+    external = extMergeGit
     #ff = false
+[mergetool "p4merge"]
+    #path = extMergeGit $BASE $LOCAL $REMOTE $MERGED
+    cmd = /usr/local/bin/extMergeGit $BASE $LOCAL $REMOTE $MERGED 
 [mergetool "extMergeGit"]
-    cmd = extMergeGit "$BASE" "$LOCAL" "$REMOTE" "$MERGED"
+    cmd = extMergeGit $BASE $LOCAL $REMOTE $MERGED
     trustExitCode = false
 [color]
     ui = true
@@ -24,6 +30,8 @@
     lol = log --oneline --decorate --all --graph
     #lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
     showdate = show --no-patch --no-notes --pretty='%cD'
+    lg = log --color --graph --pretty=format:'%C(bold white)%h%Creset -%C(bold green)%d%Creset %s %C(bold green)(%cr)%Creset %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+    llg = log --color --graph --pretty=format:'%C(bold white)%H %d%Creset%n%s%n%+b%C(bold blue)%an <%ae>%Creset %C(bold green)%cr (%ci)' --abbrev-commit
     statuss = status -uno
 [push]
     default = nothing
