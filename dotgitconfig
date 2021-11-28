@@ -22,7 +22,7 @@
     #path = extMergeGit $BASE $LOCAL $REMOTE $MERGED
     cmd = /usr/local/bin/extMergeGit $BASE $LOCAL $REMOTE $MERGED 
 [mergetool "extMergeGit"]
-    cmd = extMergeGit $BASE $LOCAL $REMOTE $MERGED
+    cmd = /usr/local/bin/extMergeGit $BASE $LOCAL $REMOTE $MERGED
     trustExitCode = false
 [color]
     ui = true

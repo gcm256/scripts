@@ -1,0 +1,22 @@
+export PATH="/usr/local/sbin:$PATH"
+export GPG_TTY=$(tty)
+
+export PATH="/usr/local/opt/tcl-tk/bin:$PATH"
+
+# Load Git complettion (Just "source ~/git-completion.zsh" will not work)
+zstyle ':completion:*:*:git:*' script ~/.zsh/git-completion.bash
+fpath=(~/.zsh $fpath)
+autoload -Uz compinit && compinit
+
+#PS1="%n@%m %1~ %#"
+#PROMPT="%n@%m %1~ %#"
+source "${HOME}/projects/git_repos/zsh-git-prompt/zshrc.sh"
+#PS1='%n@%m %~%b$(git_super_status) %# '
+PS1='%n@%m $(git_super_status) %# '
+
+#export ITERM2_SQUELCH_MARK=1
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+PS1=$(iterm2_prompt_mark)$PS1
+
+export JAVA_HOME="${HOME}/Downloads/jdk-14.0.2.jdk/Contents/Home/"
+export PATH="${HOME}/Downloads/apache-maven-3.6.3/bin:$PATH"
