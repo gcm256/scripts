@@ -22,10 +22,18 @@ git diff --no-ext-diff
 git config --list --show-origin
 git remote add upstream my-url
 ```
-Make existing branch track remote branch.
+Make existing branch track remote branch:
 ```
-git branch -u upstream/foo foo
+git branch -u upstream/foo my-bug-123
 ```
+Remove/clear tracking from existing branch my-bug-123:
+```
+git branch my-bug-123
+```
+Following command will create Pull Request (PR) from my-bug-123 to the tracked branch:
+```
+git push origin my-bug-123
+``` 
 
 # Commands
 
