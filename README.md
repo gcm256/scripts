@@ -8,6 +8,35 @@ ln -s .bashrc .bash_profile
 .bash_profile -> /Users/user1/.bashrc
 ```
 
+Redirection metacharacters, pipe etc:
+```
+>
+1>
+2>
+2>&1
+|
+2>&1|
+|&
+>>
+tee
+<
+cut
+sort
+```
+Note: `>` is same as `1>`. `2>&1|` is same as `|&`.
+
+Examples:
+```
+$ some_command >a.log 2>&1
+```
+
+Shell special parameters / characters / variables:
+Note: `See https://www.gnu.org/software/bash/manual/html_node/Special-Parameters.html`
+```
+$0, $#, $?, $^, $*, $@, $!, $$, $-, $<
+```
+
+
 # Git commands
 Ref: See 26/10/2023 notes.
 ```
