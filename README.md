@@ -64,6 +64,15 @@ Following command will create Pull Request (PR) from my-bug-123 to the tracked b
 git push origin my-bug-123
 ``` 
 
+Git reset:
+```
+git reset --soft
+git reset --mixed
+git reset --hard
+```
+
+commit-id~n^k eg `8673a~3^2` denotes the kth parent of the nth ancestor of given commit-id.
+
 # Commands
 
 Vault (It is just one 180M executable file)
