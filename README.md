@@ -31,6 +31,7 @@ $ some_command >a.log 2>&1
 ```
 
 Shell special parameters / characters / variables:
+
 Note: `See https://www.gnu.org/software/bash/manual/html_node/Special-Parameters.html`
 ```
 $0, $#, $?, $^, $*, $@, $!, $$, $-, $<
@@ -99,9 +100,49 @@ $ openssl crl2pkcs7 -nocrl -certfile /path/to/server_cert.pem | openssl pkcs7 -p
 $ openssl base64 -d < ~/.ssh/id_rsa | od -c
 $ openssl s_client -connect example.com:88888
 ```
+
+Show RSA fingerprint of SSH agent representing `~/.ssh/id_rsa`:
 ```
-$ssh-keygen -y -f ~/.ssh/id_rsa -E md5
+$ ssh-keygen -y -f ~/.ssh/id_rsa -E md5
 ```
+or
+```
+$ ssh-keygen -l -f ~/.ssh/id_rsa -E md5 -v
+```
+or
+```
+$ ssh-keygen -l -f ~/.ssh/id_rsa.pub -E md5 -v
+```
+or
+```
+$ ssh-add -l -E md5
+```
+
+Show RSA fingerprints of SSH known\_hosts:
+```
+$ ssh-keygen -l -f ~/.ssh/known_hosts -E md5 -v
+```
+
+Check github hostkey fingerprint:
+```
+$ ssh -T git@github.com -o FingerPrintHash=md5 -o VisualHostKey=yes
+```
+
+GnuPG config file:
+```
+~/.gnupg/gpg-agent.conf
+```
+Can add entry for pinentry-mac to `gpg-agent.conf`.
+Kill agent:
+```
+$ gpgconf --kill gpg-agent
+```
+Show GnuPG keys:
+```
+$ gpg --list-keys --keyid-format LONG --fingerprint
+$ gpg --list-secret-keys --keyid-format LONG --fingerprint
+```
+
 
 Connectivity
 ```
