@@ -9,7 +9,7 @@ ln -s .bashrc .bash_profile
 ```
 
 # Git commands
-
+Ref: See 26/10/2023 notes.
 ```
 git lol
 git remote -v
@@ -26,6 +26,8 @@ Make existing branch track remote branch.
 ```
 git branch -u upstream/foo foo
 ```
+
+# Commands
 
 Vault (It is just one 180M executable file)
 ```
