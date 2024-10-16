@@ -175,3 +175,13 @@ $ docker start spark2
 $ docker exec -it spark2 /bin/bash
 user1@ac43267cb8c4:~$ who
 ```
+
+Docker build:
+```
+$ docker build -f path/to/Dockerfile path/to/destination
+```
+
+Maven run:
+```
+$ mvn [-f path/to/pom.xml] -U -B clean build deploy test -DskipTests=false
+```
