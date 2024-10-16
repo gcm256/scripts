@@ -99,6 +99,7 @@ $ openssl enc -help
 $ openssl crl2pkcs7 -nocrl -certfile /path/to/server_cert.pem | openssl pkcs7 -print_certs -text -noout | grep Subject:
 $ openssl base64 -d < ~/.ssh/id_rsa | od -c
 $ openssl s_client -connect example.com:88888
+$ openssl s_client -connect example.com:88888 -showcerts
 ```
 
 Show RSA fingerprint of SSH agent representing `~/.ssh/id_rsa`:
@@ -157,4 +158,20 @@ TCPDUMP
 ```
 $ tcpdump -i bond0 -s 0 -vv -w /var/tmp/capture.pcap dst port 21763
 $ tcpdump -i eth0 -s 0 -vv -w /var/tmp/capture.pcap dst port 21763 
+```
+
+Docker Spark setup:
+```
+$ docker pull jupyter/all-spark-notebook:95f855f8e55f
+$ docker images
+$ docker run -p 8888:8888 -p 4040:4040 --name spark2 jupyter/all-spark-notebook:95f855f8e55f
+$ docker ps
+```
+Check http://localhost:8888
+```
+$ chmod -R 777 path/to/datasets
+$ docker cp path/to/datasets spark2:/home/user1
+$ docker start spark2
+$ docker exec -it spark2 /bin/bash
+user1@ac43267cb8c4:~$ who
 ```
