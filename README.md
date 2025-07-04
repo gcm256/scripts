@@ -76,24 +76,34 @@ commit-id~n^k eg `8673a~3^2` denotes the kth parent of the nth ancestor of given
 
 # Commands
 
-Vault (It is just one 180M executable file)
+Find a word / phrase / string in all (let's say java) files under a folder:
+```
+$ find /path/to/folder -name "*.java" | xargs grep "my word, phrase or string"
+```
+
+Get disk usage size of a folder's direct subfolders (ie depth 1) along with the folder's grand total size, sorted ascending by size:
+```
+$ du -ch -d 1 /path/to/folder | sort -h
+```
+
+Vault (It is just one 180M executable file):
 ```
 $ ~/location/to/vault/executable-dir/vault -h
 $ vault -h
 $ vault list -h
 ```
 
-Using tee to get command output on terminal and file
+Using tee to get command output on terminal and file:
 ```
 $ whatever_command |& tee log.out
 ```
 
-CDBDUMP
+CDBDUMP:
 ```
 $ cdbdump < foo.cdb | grep whatever
 ```
 
-OpenSSL
+OpenSSL:
 ```
 $ openssl enc -help
 $ openssl crl2pkcs7 -nocrl -certfile /path/to/server_cert.pem | openssl pkcs7 -print_certs -text -noout | grep Subject:
@@ -145,7 +155,7 @@ $ gpg --list-secret-keys --keyid-format LONG --fingerprint
 ```
 
 
-Connectivity
+Connectivity:
 ```
 $ nc -zv 21.325.343.36 88888
 $ nc -zv example.com 22222
@@ -154,7 +164,7 @@ $ host example.com
 $ nslookup example.com
 ```
 
-TCPDUMP
+TCPDUMP:
 ```
 $ tcpdump -i bond0 -s 0 -vv -w /var/tmp/capture.pcap dst port 21763
 $ tcpdump -i eth0 -s 0 -vv -w /var/tmp/capture.pcap dst port 21763 
