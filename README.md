@@ -18,10 +18,7 @@ Redirection metacharacters, pipe etc:
 2>&1|
 |&
 >>
-tee
 <
-cut
-sort
 ```
 Note: `>` is same as `1>`. `2>&1|` is same as `|&`.
 
@@ -37,6 +34,40 @@ Note: `See https://www.gnu.org/software/bash/manual/html_node/Special-Parameters
 $0, $#, $?, $^, $*, $@, $!, $$, $-, $<
 ```
 
+Useful short commands:
+```
+ls -alrth
+date
+cal
+du
+dc
+od
+tr
+tee
+cut
+sort
+uniq
+```
+
+Using `cut` to get the 2nd field in a csv file:[^1][^2][^3]
+```
+$ cat foo.csv | cut -d',' -f2
+```
+
+Using `cut` to get multiple fields with space(s) as delimiter. `tr -s ' '` will first squeeze multiple spaces into one space:
+```
+$ ls -alrth | tr -s ' ' | cut -d' ' -f5,6,7,9
+```
+
+Using `tee` to get command output on terminal and file:
+```
+$ whatever_command |& tee log.out
+```
+
+Using `od -c` to see if an SSH key file has passphrase set:
+```
+$ openssl base64 -d < ~/.ssh/id_rsa | od -c
+```
 
 # Git commands
 Ref: See 26/10/2023 notes.
@@ -65,6 +96,14 @@ Following command will create Pull Request (PR) from my-bug-123 to the tracked b
 git push origin my-bug-123
 ``` 
 
+Git push and fetch:
+```
+$ git push <remote-name> <branch-name>
+$ git fetch <remote-name>
+```
+
+eg `git push origin master` or `git push origin my-bug-123` or `git push upstream my-bug-123` etc, and `git fetch origin` or `git fetch upstream` etc.
+
 Git reset:
 ```
 git reset --soft
@@ -80,6 +119,11 @@ Find a word / phrase / string in all (let's say java) files under a folder:
 ```
 $ find /path/to/folder -name "*.java" | xargs grep "my word, phrase or string"
 ```
+> [!NOTE]
+> To only list the (let's say java) files where the word / phrase / string occurs, along with the (non-zero) number of occurrences:
+> ```
+> find /path/to/folder -name "*.java" | xargs grep -c "my word, phrase or string" | grep -v :0
+> ```
 
 Get disk usage size of a folder's direct subfolders (ie depth 1) along with the folder's grand total size, sorted ascending by size:
 ```
@@ -91,11 +135,6 @@ Vault (It is just one 180M executable file):
 $ ~/location/to/vault/executable-dir/vault -h
 $ vault -h
 $ vault list -h
-```
-
-Using tee to get command output on terminal and file:
-```
-$ whatever_command |& tee log.out
 ```
 
 CDBDUMP:
@@ -195,3 +234,9 @@ Maven run:
 ```
 $ mvn [-f path/to/pom.xml] -U -B clean build deploy test -DskipTests=false
 ```
+
+---
+
+[^1]: https://man7.org/linux/man-pages/man1/cut.1.html
+[^2]: https://explainshell.com/explain?cmd=cut+-d%27%3D%27+-f2
+[^3]: https://stackoverflow.com/questions/29681222/how-to-use-cut-command-in-linux
