@@ -1,3 +1,6 @@
 set number
+set ruler
+set ic
+set hlsearch
 colorscheme darkblue
 syntax on
