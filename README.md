@@ -8,6 +8,8 @@ ln -s .bashrc .bash_profile
 .bash_profile -> /Users/user1/.bashrc
 ```
 
+For more commands see https://github.com/onceupon/Bash-Oneliner
+
 Redirection metacharacters, pipe etc:
 ```
 >
