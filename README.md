@@ -43,12 +43,29 @@ date
 cal
 du
 dc
+bc
 od
 tr
 tee
 cut
 sort
 uniq
+fold
+rev
+seq
+md5
+shasum
+base64
+file
+zmore
+zless
+env
+yes
+ps
+top
+strace / dtruss
+tree
+pstree
 ```
 
 Using `cut` to get the 2nd field in a csv file:[^1][^2][^3]
@@ -70,6 +87,40 @@ Using `od -c` to see if an SSH key file has passphrase set:
 ```
 $ openssl base64 -d < ~/.ssh/id_rsa | od -c
 ```
+
+# Shell Builtins
+
+See `man builtins` and `man zshbuiltins` for shell builtins.
+
+To see if a given command is a shell builtin, reserved word, executable or shell function use `type given_command` command.
+
+```
+$ type .
+. is a shell builtin
+
+$ type '[['
+[[ is a reserved word
+
+$ type '['
+[ is a shell builtin
+
+$ type if
+if is a reserved word
+
+$ type man
+man is /usr/bin/man
+
+$ type type
+type is a shell builtin
+```
+
+`compgen -b` lists shell builtins.[^4]
+
+`compgen -k` lists shell reserved words (keywords).[^4]
+
+Note: For zsh use `enable` or `whence -wm '*'` commands[^6] or use `autoload`[^5] to autoload `compgen` shell function.[^7]
+
+For zsh completion see [^8] and `man zsh`.
 
 # Git commands
 Ref: See 26/10/2023 notes.
@@ -242,3 +293,8 @@ $ mvn [-f path/to/pom.xml] -U -B clean build deploy test -DskipTests=false
 [^1]: https://man7.org/linux/man-pages/man1/cut.1.html
 [^2]: https://explainshell.com/explain?cmd=cut+-d%27%3D%27+-f2
 [^3]: https://stackoverflow.com/questions/29681222/how-to-use-cut-command-in-linux
+[^4]: https://askubuntu.com/questions/445749/whats-the-difference-between-shell-builtin-and-shell-keyword
+[^5]: https://stackoverflow.com/questions/30840651/what-does-autoload-do-in-zsh
+[^6]: https://unix.stackexchange.com/questions/616398/is-there-a-command-to-get-builtin-commands-on-zsh
+[^7]: https://unix.stackexchange.com/questions/778469/what-is-the-nature-of-compgen-under-zsh-as-opposed-to-bash
+[^8]: https://thevaluable.dev/zsh-completion-guide-examples/
