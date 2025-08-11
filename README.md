@@ -36,37 +36,29 @@ Note: `See https://www.gnu.org/software/bash/manual/html_node/Special-Parameters
 $0, $#, $?, $^, $*, $@, $!, $$, $-, $<
 ```
 
-Useful short commands:
-```zsh
-ls -alrth
-date
-cal
-du
-dc
-bc
-od
-tr
-tee
-cut
-sort
-uniq
-fold
-rev
-seq
-md5
-shasum
-base64
-file
-zmore
-zless
-env
-yes
-ps
-top
-strace / dtruss
-tree
-pstree
-```
+## Useful commands:
+
+| Search | View | Text Processing | Machine Stats | File Processing & Non-Text Data Editing | Auth | Network Requests |
+| --- | --- | ---| --- | --- | --- | --- |
+| `find` | `ls -alrth` | `dc` `bc` | `du` | `dd` | `sudo` | `curl` |
+| `grep` | `wc` `date` `cal`  | `factor` | `ps` | `shred` | `su` | `wget` |
+| `rg` | `cat` `bat` `tac` | `tr` `cut` `tee` `sort` `uniq` `fold` `rev`  | `pstree` | `cmp` | `ssh` | |
+| `xargs` | `md5` `shasum` `base64` | `seq` | `top` | `ditto` | `openssl` |  |
+| `fzf` | `od` `xxd` `hexdump` | `yes` | `strace` <br> `dtruss` | `hexedit` | `ac` |  |
+| `strings` | `tree` | `paste` | `uptime` | `as` |  |  |
+|  | `file` | `sed` `awk` `gawk` | `lsof` | `ld` |  |  |
+|  | `env` | `pbcopy` `pbpaste` | `tty` | `chmod` |  |  |
+|  | `zmore` `zless` `more` `less` | `nl` | `uname` | `chown` |  |  |
+
+> [!NOTE]
+> The above table does **NOT** show shell builtins, or commands that have shell builtin forms.
+> Hence `echo`, `bg`, `fg`, `true`, `false` etc are not shown, even if they have executables.
+> Use `type -a whatever_command` to see if the command has multiple occurences:
+> ```console
+> $ type -a echo
+> echo is a shell builtin
+> echo is /bin/echo
+> ``` 
 
 Using `cut` to get the 2nd field in a csv file:[^1][^2][^3]
 ```zsh
@@ -94,7 +86,7 @@ See `man builtins` and `man zshbuiltins` for shell builtins.
 
 To see if a given command is a shell builtin, reserved word, executable or shell function use `type given_command` command.
 
-```zsh
+```console
 $ type .
 . is a shell builtin
 
@@ -129,7 +121,7 @@ $ whence -wm '*' | grep reserved
 ```
 
 To list the types of shell interpretations use (See `whence` in `man zshbuiltins`):
-```zsh
+```console
 $ whence -wm '*' | cut -d' ' -f2 | uniq | sort
 alias
 builtin
