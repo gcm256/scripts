@@ -13,6 +13,10 @@ openssl base64 -d -in prun15.txt.b64; \
 ```
 
 ```zsh
+cat prun15.txt.b64 | openssl base64 -d | wc
+```
+
+```zsh
 ln -s .bashrc .bash_profile
 ```
 
