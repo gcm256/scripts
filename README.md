@@ -1,7 +1,7 @@
 # scripts
 
 ```zsh
-openssl base64 -d -in prun5.txt.b64 | (cat -; echo "$(pbpaste)") | sort | uniq | tee "$(tty)" | (openssl base64 -out prun15.txt.b64; cat prun15.txt.b64)
+openssl base64 -d -in prun15.txt.b64 | (cat -; echo "$(pbpaste)") | sort | uniq | tee "$(tty)" | (openssl base64 -out prun15.txt.b64; cat prun15.txt.b64; openssl base64 -d -in prun15.txt.b64)
 ```
 
 ```zsh
