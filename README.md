@@ -5,7 +5,8 @@ openssl base64 -d -in prun15.txt.b64 | \
 (cat -; echo "$(pbpaste)") | \
 sort | \
 uniq | \
-grep -E "\.com|^[A-Z][a-z]* [A-Z][a-z]*$" | tee "$(tty)" | \
+grep -E "(^[a-z]+\.com)|(^[A-Z][a-z]* [A-Z][a-z]*$)" | \
+tee "$(tty)" | \
 (openssl base64 -out prun15.txt.b64; cat prun15.txt.b64; \
 openssl base64 -d -in prun15.txt.b64; \
 (openssl base64 -d -in prun15.txt.b64 | wc))
