@@ -1,6 +1,10 @@
 # scripts
 
 ```zsh
+openssl base64 -d -in prun5.txt.b64 | (cat -; echo "$(pbpaste)") | tee "$(tty)" | (openssl base64 -out prun15.txt.b64; cat prun15.txt.b64)
+```
+
+```zsh
 ln -s .bashrc .bash_profile
 ```
 
