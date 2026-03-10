@@ -1,6 +1,14 @@
 # scripts
 
 ```zsh
+openssl base64 -e -in prun15.txt -out prun15.txt.b64
+```
+
+```zsh
+openssl base64 -d -in prun15.txt.b64
+```
+
+```zsh
 openssl base64 -d -in prun15.txt.b64 | \
 (cat -; echo "$(pbpaste)") | \
 sort | \
