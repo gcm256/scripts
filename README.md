@@ -160,6 +160,60 @@ Note: `type` is same as `whence -v` and `which` is same as `whence -c`.
 
 For zsh completion see [^8] and `man zsh`.
 
+## Following command works as (Count-up) Timer:
+
+Show time elapsed in MM:SS AND restart the timer:
+
+```zsh
+echo $(( $(date +%s) - $(cat ~/.timer) )) | awk '{printf "%d:%02d\n", int($1/60), $1%60}'; date +%s > ~/.timer
+```
+
+Note: Skip the last command ie skip `date +%s > ~/.timer` in order to only show the time elapsed without restarting.
+
+## Convert Hex to Decimal and vice versa:
+
+### Hex to Decimal:
+
+```zsh
+printf "%d\n" 0x<HEX-NUMBER>
+```
+
+Example:
+```zsh
+% printf "%d\n" 0xab
+171
+%
+```
+
+Example:
+```zsh
+% printf "%d\n" 0x8F
+143
+%
+```
+
+### Decimal to Hex:
+
+```zsh
+printf "%X\n" <DECIMAL-NUMBER>
+```
+
+Example:
+```zsh
+% printf "%X\n" 143
+8F
+%
+```
+
+Note: To show the Hex in lowercase `a-f` instead of `A-F`, use `%x` instead of `%X`.
+
+Example:
+```zsh
+% printf "%x\n" 143
+8f
+%
+```
+
 # Git commands
 Ref: See 26/10/2023 notes.
 ```zsh
