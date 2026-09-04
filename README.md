@@ -1,10 +1,23 @@
 # scripts
 
+
+```zsh
+unzip -p prun-zip.zip prun/prun15.txt.b64 | openssl base64 -d
+```
+
 See zip listing of files sorted by time, with latest at the bottom (similar to time sorting in `ls -alrth`):
 
 ```zsh
 zipinfo -T prun-zip.zip | sort -k 7
 ```
+
+or,
+
+```zsh
+zipinfo -mT prun-zip.zip | sort -n -k 8
+```
+
+Base64:
 
 ```zsh
 openssl base64 -e -in prun15.txt -out prun15.txt.b64
@@ -12,10 +25,6 @@ openssl base64 -e -in prun15.txt -out prun15.txt.b64
 
 ```zsh
 openssl base64 -d -in prun15.txt.b64
-```
-
-```zsh
-unzip -p prun-zip.zip prun/prun15.txt.b64 | openssl base64 -d
 ```
 
 ```zsh
@@ -33,6 +42,8 @@ openssl base64 -d -in prun15.txt.b64; \
 ```zsh
 cat prun15.txt.b64 | openssl base64 -d | wc
 ```
+
+Symbolic link:
 
 ```zsh
 ln -s .bashrc .bash_profile
