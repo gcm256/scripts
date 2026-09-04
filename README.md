@@ -1,5 +1,11 @@
 # scripts
 
+See zip listing of files sorted by time, with latest at the bottom (similar to time sorting in `ls -alrth`):
+
+```zsh
+zipinfo -T prun-zip.zip | sort -k 7
+```
+
 ```zsh
 openssl base64 -e -in prun15.txt -out prun15.txt.b64
 ```
