@@ -9,6 +9,10 @@ openssl base64 -d -in prun15.txt.b64
 ```
 
 ```zsh
+unzip -p prun-zip.zip prun/prun15.txt.b64 | openssl base64 -d
+```
+
+```zsh
 openssl base64 -d -in prun15.txt.b64 | \
 (cat -; echo "$(pbpaste)") | \
 sort | \
