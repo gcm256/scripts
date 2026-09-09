@@ -1,5 +1,18 @@
 # scripts
 
+### GitHub (Outage) Status:
+
+https://www.githubstatus.com/
+
+or,
+
+```zsh
+curl -s https://www.githubstatus.com/api/v2/status.json
+```
+
+---
+
+### Some commands:
 
 ```zsh
 unzip -p prun-zip.zip prun/prun15.txt.b64 | openssl base64 -d
