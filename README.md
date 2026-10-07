@@ -12,6 +12,83 @@ curl -s https://www.githubstatus.com/api/v2/status.json
 
 ---
 
+### Power Billing
+
+```
+Step 1: Let x := Import - Export;
+Step 2: Surplus_Units = - |Surplus_Units|; // Surplus_Units must be a non-positive number.
+Step 3: Billable_Units = Max(x + Surplus_Units, 0); Consumed_Units = x + Generated_Units;
+Step 4: Surplus_Units = Min(x + Surplus_Units, 0); // Update the saved Surplus_Units value.
+If (BILL_MONTH == APRIL) {
+  // Total Annual Values are calculated using (last) MAY thru (current) APRIL Bills.
+  Step 5: Minimum_Annual_Billable_Units = 0.1 * Total_Annual_Gross_Consumpution_Units;
+  Step 6: Settlement_Units = Max(Minimum_Annual_Billable_Units - Total_Annual_Billable_Units, 0);
+  Step 7: Billable_Units += Settlement_Units;
+  Step 8: Surplus_Units = 0; // Surplus_Units Lapse, so reset it to Zero.
+}
+```
+
+#### Example of Billing (eg MARCH):
+
+Given:
+
+> Import = 133.97 \
+> Export = 235.10 \
+> Generated = 314.06 \
+> Surplus = -1,309.42 
+>
+
+Calculated:
+
+> :bulb: Billable = Max(Import - Export + Surplus, 0) = Max(133.97 - 235.10 + (-1,309.42), 0) = Max(-1,410.55, 0) = 0 \
+> Consumed =  (Import - Export) + Generated = (133.97 - 235.10) + 314.06 = 212.93 \
+> (Updated) Surplus = Min(Import - Export + Surplus, 0) = Min(133.97 - 235.10 + (-1,309.42), 0) = Min(-1,410.55, 0) = -1,410.55 
+> 
+
+#### Example of Settlement (APRIL):
+
+Given:
+
+> Import = 506.45 \
+> Export = 149.56 \
+> Generated = 359.21 \
+> Surplus = -1,410.52 
+>
+> 
+> Total Annual Gross Consumption (MAY - APR) = 3,275.91 
+>
+
+Calculated:
+
+> Billable = Max(Import - Export + Surplus, 0) = Max(506.45 - 149.56 + (-1,410.52), 0) = Max(-1,053.63, 0) = 0 \
+> Consumed =  (Import - Export) + Generated = (506.45 - 149.56) + 359.21 = 716.10 \
+> (Updated) Surplus = Min(Import - Export + Surplus, 0) = Min(506.45 - 149.56 + (-1,410.52), 0) = Min(-1,053.63, 0) = -1,053.63 
+>
+> 
+> Minimum Annual Billable = 0.1 * (Total Annual Gross Consumption) = 327.591 = 328 \
+> Total Annual Billable (Added from MAY - APR Bills) = 0 (MAY) + 78 (JUN) + 27 (JULY) + 0 (AUG - APR) = 105 \
+> Settlement = Max((Minimum Annual Billable) - (Total Annual Billable), 0) = Max(328 - 105, 0) = Max(223, 0) = 223 \
+> :bulb: (Total APRIL) Billable = Billable + Settlement = 0 + 223 = 223 \
+> (Final) Surplus = 0 (Surplus Lapses, reset it to Zero.) 
+>
+
+#### Another Example of Billing (eg MAY):
+
+Given:
+
+> Import = 692.05 \
+> Export = 142.35 \
+> Generated = 423.70 \
+> Surplus = 0.00 
+>
+
+Calculated:
+
+> :bulb: Billable = Max(Import - Export + Surplus, 0) = Max(692.05 - 142.35 + (0.00), 0) = Max(549.70, 0) = 549.70 \
+> Consumed =  (Import - Export) + Generated = (692.05 - 142.35) + 423.70 = 973.40 \
+> (Updated) Surplus = Min(Import - Export + Surplus, 0) = Min(549.70, 0) = 0.00 
+> 
+
 ### Some commands:
 
 ```zsh
