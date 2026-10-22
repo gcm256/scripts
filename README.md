@@ -12,7 +12,7 @@ curl -s https://www.githubstatus.com/api/v2/status.json
 
 ---
 
-### Example of Google Searching pdfs in a wordpress site:
+### Examples of Google Searching pdfs in a wordpress (or any other) site:
 
 ```
 "institutodepesquisascientificas" filetype:pdf
@@ -49,7 +49,7 @@ or,
 
 ---
 
-### Springer GTM abd UTM Textbooks
+### Springer GTM and UTM Textbooks
 
 [Graduate Texts in Mathematics](https://link.springer.com/series/0136)
 
