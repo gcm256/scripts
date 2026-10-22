@@ -12,6 +12,59 @@ curl -s https://www.githubstatus.com/api/v2/status.json
 
 ---
 
+### Example of Google Searching pdfs in a wordpress site:
+
+```
+"institutodepesquisascientificas" filetype:pdf
+```
+
+Also try:
+
+```
+site:institutodepesquisascientificas.wordpress.com filetype:pdf
+```
+
+or
+
+```
+site:institutodepesquisascientificas.files.wordpress.com filetype:pdf
+```
+
+Other examples:
+
+```
+"constable.blog" filetype:pdf
+```
+
+```
+"emineter.wordpress.com" filetype:pdf
+```
+
+or,
+
+
+```
+"emineter" filetype:pdf
+```
+
+---
+
+### Springer GTM abd UTM Textbooks
+
+[Graduate Texts in Mathematics](https://link.springer.com/series/0136)
+
+[Undergraduate Texts in Mathematics](https://link.springer.com/series/0666)
+
+#### On Amazon:
+
+[Graduate Texts in Mathematics (180 book series)](https://www.amazon.in/dp/B096BFMSS2?binding=paperback)
+
+[Undergraduate Texts in Mathematics (168 book series)](https://www.amazon.in/dp/B088FFX8QR?binding=paperback)
+
+[Springer Undergraduate Texts in Mathematics and Technology (32 book series)](https://www.amazon.in/dp/B0G29Q2DL9?binding=paperback)
+
+---
+
 ### Power Billing
 
 ```
