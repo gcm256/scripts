@@ -49,19 +49,19 @@ or,
 
 ---
 
-### Springer GTM and UTM Textbooks
+### 📚 Springer GTM and UTM Textbooks 📚
 
-[Graduate Texts in Mathematics](https://link.springer.com/series/0136)
+📙 [Graduate Texts in Mathematics](https://link.springer.com/series/0136)
 
-[Undergraduate Texts in Mathematics](https://link.springer.com/series/0666)
+📙 [Undergraduate Texts in Mathematics](https://link.springer.com/series/0666)
 
 #### On Amazon:
 
-[Graduate Texts in Mathematics (180 book series)](https://www.amazon.in/dp/B096BFMSS2?binding=paperback)
+📙 [Graduate Texts in Mathematics (180 book series)](https://www.amazon.in/dp/B096BFMSS2?binding=paperback)
 
-[Undergraduate Texts in Mathematics (168 book series)](https://www.amazon.in/dp/B088FFX8QR?binding=paperback)
+📙 [Undergraduate Texts in Mathematics (168 book series)](https://www.amazon.in/dp/B088FFX8QR?binding=paperback)
 
-[Springer Undergraduate Texts in Mathematics and Technology (32 book series)](https://www.amazon.in/dp/B0G29Q2DL9?binding=paperback)
+📙 [Springer Undergraduate Texts in Mathematics and Technology (32 book series)](https://www.amazon.in/dp/B0G29Q2DL9?binding=paperback)
 
 ---
 
