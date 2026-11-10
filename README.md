@@ -142,7 +142,39 @@ Calculated:
 > (Updated) Surplus = Min(Import - Export + Surplus, 0) = Min(549.70, 0) = 0.00 
 > 
 
-### Some commands:
+----
+
+## Run Python Code (including visualization libraries eg matplotlib etc) Online And View Results (eg generated svg images):
+
+**https://jupyter.org/try-jupyter/lab/**
+
+----
+
+## Math Studios:
+
+- **https://www.desmos.com/3d** eg: https://www.desmos.com/3d/9cec4a5lqn
+- **https://www.geogebra.org/classic#geometry**
+
+----
+
+## View Commit Details (Like `git show`) And Also The Entire Patch On `github.com`:
+
+You can check the commit details (eg email address etc) used for a commit by adding `.patch` to the end of a commit URL. For example, the following commit URL includes `.patch`.
+
+<https://github.com/octocat/octocat.github.io/commit/67c0afc1da354d8571f51b6f0af8f2794117fd10.patch>
+
+```text
+From 67c0afc1da354d8571f51b6f0af8f2794117fd10 Mon Sep 17 00:00:00 2001
+From: The Octocat <octocat@nowhere.com>
+Date: Sun, 27 Apr 2014 15:36:39 +0530
+Subject: [PATCH] updated index for better welcome message
+```
+
+Source: <https://docs.github.com/en/account-and-profile/how-tos/contribution-settings/troubleshooting-missing-contributions>
+
+----
+
+## Some commands:
 
 ```zsh
 unzip -p prun-zip.zip prun/prun15.txt.b64 | openssl base64 -d
