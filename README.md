@@ -47,6 +47,22 @@ or,
 "emineter" filetype:pdf
 ```
 
+```
+What is an L-function site:aimath.org filetype:pdf
+```
+
+```
+aimath.org filetype:pdf
+```
+
+```
+What is an L-function site:ams.org filetype:pdf
+```
+
+```
+ams.org filetype:pdf
+```
+
 ---
 
 ### 📚 Springer GTM and UTM Textbooks 📚
