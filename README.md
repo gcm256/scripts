@@ -514,10 +514,24 @@ Show RSA fingerprints of SSH known\_hosts:
 $ ssh-keygen -l -f ~/.ssh/known_hosts -E md5 -v
 ```
 
+----
+
 Check github hostkey fingerprint:
 ```zsh
 $ ssh -T git@github.com -o FingerPrintHash=md5 -o VisualHostKey=yes
 ```
+
+For SHA256 fingerprint:
+```zsh
+$ ssh -T git@github.com -o FingerPrintHash=sha256 -o VisualHostKey=yes
+```
+
+> [!IMPORTANT]
+> While [Testing your SSH connection](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/testing-your-ssh-connection) (using
+> **`ssh -T git@github.com -o FingerPrintHash=sha256 -o VisualHostKey=yes`**), make sure that the SHA256 fingerprint in the output matches one of GitHub's SSH key fingerprints listed in
+> [GitHub's public key fingerprint](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/githubs-ssh-key-fingerprints).
+
+----
 
 GnuPG config file:
 ```zsh
