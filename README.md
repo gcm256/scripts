@@ -166,6 +166,20 @@ Calculated:
 
 ----
 
+## tinyMD: 100% client-side in-browser Markdown Viewer
+
+https://www.tinymd.io/tools/markdown-reader
+
+- **Zero-install & Zero-setup** Client-Side Web App.
+- **Data Never Leaves Your Computer**. It is a static single-page app with no backend storage or cloud sync.
+- [Other tools](https://www.tinymd.io/tools) eg:
+  - https://www.tinymd.io/tools/markdown-viewer
+  - https://www.tinymd.io/tools/markdown-to-pdf
+  - https://www.tinymd.io/tools/text-to-pdf
+  - https://www.tinymd.io/tools/text-to-markdown etc.
+  
+----
+
 ## Math Studios:
 
 - **https://www.desmos.com/3d** eg: https://www.desmos.com/3d/9cec4a5lqn
