@@ -160,7 +160,7 @@ Calculated:
 
 ----
 
-## Run Python Code (including visualization libraries eg matplotlib etc) Online And View Results (eg generated svg images):
+## [![JupyterLite](https://img.shields.io/badge/Run-JupyterLite-F37626?style=flat&logo=jupyter&logoColor=white)](https://jupyter.org/try-jupyter/lab/)Run Python Code (including visualization libraries eg matplotlib etc) Online And View Results (eg generated svg images):
 
 **https://jupyter.org/try-jupyter/lab/**
 
@@ -184,6 +184,15 @@ https://www.tinymd.io/tools/markdown-reader
 
 - **https://www.desmos.com/3d** eg: https://www.desmos.com/3d/9cec4a5lqn
 - **https://www.geogebra.org/classic#geometry**
+
+----
+
+## GitHub Badges:
+
+- [![Shields.io](https://img.shields.io/badge/Shields.io-44CC11?style=flat&logo=shieldsdotio&logoColor=white)](https://shields.io/docs/logos) https://shields.io/docs/logos
+- [![Simple Icons](https://img.shields.io/badge/Simple%20Icons-111111?style=flat&logo=simpleicons&logoColor=111111&labelColor=f6f8fa)](https://simpleicons.org) https://simpleicons.org/?q=geogebra
+- [![Slugs Markdown File](https://img.shields.io/badge/Slugs%20Markdown%20File-333333?style=flat&logo=markdown&logoColor=white)](https://github.com/simple-icons/simple-icons/blob/master/slugs.md)
+  https://github.com/simple-icons/simple-icons/blob/master/slugs.md
 
 ----
 
